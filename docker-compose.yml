@@ -1,0 +1,25 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_student
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: student_db
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_clean_data:/var/lib/mysql
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongo_student
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_clean_data:/data/db
+
+volumes:
+  mysql_clean_data:
+  mongo_clean_data:

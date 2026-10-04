@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Phân Tích & Dự Đoán Học Tập Sinh Viên</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- React & Babel -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        function App() {
+            const [stats, setStats] = useState(null);
+            const [students, setStudents] = useState([]);
+            const [riskOnly, setRiskOnly] = useState(false);
+            const [searchQuery, setSearchQuery] = useState("");
+            const [loading, setLoading] = useState(true);
+
+            // State cho form dự đoán
+            const [formData, setFormData] = useState({
+                Age_at_enrollment: 20,
+                Gender: 1,
+                Debtor: 0,
+                Tuition_fees_up_to_date: 1,
+                Scholarship_holder: 0,
+                Curricular_units_1st_sem_grade: 12.0,
+                Curricular_units_2nd_sem_grade: 12.5
+            });
+            const [predictResult, setPredictResult] = useState(null);
+            const [predicting, setPredicting] = useState(false);
+
+            const chartRef = useRef(null);
+            const chartInstance = useRef(null);
+
+            // 1. Tải dữ liệu thống kê
+            useEffect(() => {
+                fetch("http://127.0.0.1:8000/api/stats")
+                    .then(res => res.json())
+                    .then(data => setStats(data))
+                    .catch(err => console.error("Lỗi tải stats:", err));
+            }, []);
+
+            // 2. Tải danh sách sinh viên
+            useEffect(() => {
+                setLoading(true);
+                const url = `http://127.0.0.1:8000/api/students?risk_only=${riskOnly}&search=${searchQuery}&limit=100`;
+                fetch(url)
+                    .then(res => res.json())
+                    .then(data => {
+                        setStudents(data);
+                        setLoading(false);
+                    })
+                    .catch(err => {
+                        console.error("Lỗi tải danh sách:", err);
+                        setLoading(false);
+                    });
+            }, [riskOnly, searchQuery]);
+
+            // 3. Vẽ biểu đồ phân bố kết quả dự đoán
+            useEffect(() => {
+                if (!stats || !chartRef.current) return;
+
+                if (chartInstance.current) {
+                    chartInstance.current.destroy();
+                }
+
+                const ctx = chartRef.current.getContext("2d");
+                chartInstance.current = new Chart(ctx, {
+                    type: "doughnut",
+                    data: {
+                        labels: ["Tốt nghiệp (Graduate)", "Có nguy cơ thôi học (Dropout)", "Đang theo học (Enrolled)"],
+                        datasets: [{
+                            data: [stats.graduate_predicted, stats.dropout_predicted, stats.enrolled_predicted],
+                            backgroundColor: ["#10b981", "#ef4444", "#3b82f6"]
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { position: "bottom" }
+                        }
+                    }
+                });
+            }, [stats]);
+
+            // 4. Xử lý dự đoán cá nhân
+            const handlePredict = async (e) => {
+                e.preventDefault();
+                setPredicting(true);
+                try {
+                    const res = await fetch("http://127.0.0.1:8000/api/predict", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            ...formData,
+                            Marital_status: 1,
+                            Nationality: 1
+                        })
+                    });
+                    const result = await res.json();
+                    setPredictResult(result);
+                } catch (err) {
+                    alert("Lỗi khi kết nối API dự đoán!");
+                } finally {
+                    setPredicting(false);
+                }
+            };
+
+            return (
+                <div className="min-h-screen">
+                    {/* Header */}
+                    <header className="bg-white border-b border-slate-200 sticky top-0 z-30 px-6 py-4 shadow-sm flex items-center justify-between">
+                        <div>
+                            <h1 className="text-xl font-bold text-slate-900">Hệ Thống Phân Tích & Dự Đoán Học Tập Sinh Viên</h1>
+                            <p className="text-xs text-slate-500">Pipeline: MySQL + MongoDB + CSV → Machine Learning (Random Forest) → Web Serving</p>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
+                                ● Live API
+                            </span>
+                        </div>
+                    </header>
+
+                    <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-6">
+                        {/* KPI Cards */}
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                                <p className="text-sm font-medium text-slate-500">Tổng sinh viên theo dõi</p>
+                                <h3 className="text-3xl font-extrabold text-slate-900 mt-2">{stats ? stats.total_students.toLocaleString() : "..."}</h3>
+                                <p className="text-xs text-slate-400 mt-1">Dữ liệu hợp nhất từ 3 nguồn</p>
+                            </div>
+                            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                                <p className="text-sm font-medium text-rose-600">Nguy cơ thôi học (Dropout)</p>
+                                <h3 className="text-3xl font-extrabold text-rose-600 mt-2">{stats ? stats.dropout_predicted.toLocaleString() : "..."}</h3>
+                                <p className="text-xs text-rose-400 mt-1">Tỷ lệ: {stats ? `${stats.risk_rate_percent}%` : "..."}</p>
+                            </div>
+                            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                                <p className="text-sm font-medium text-emerald-600">Dự đoán tốt nghiệp (Graduate)</p>
+                                <h3 className="text-3xl font-extrabold text-emerald-600 mt-2">{stats ? stats.graduate_predicted.toLocaleString() : "..."}</h3>
+                                <p className="text-xs text-emerald-500 mt-1">Trạng thái học tập đạt chuẩn</p>
+                            </div>
+                            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                                <p className="text-sm font-medium text-slate-500">Điểm trung bình Kỳ 1 / Kỳ 2</p>
+                                <h3 className="text-3xl font-extrabold text-indigo-600 mt-2">{stats ? `${stats.avg_grade_sem1} / ${stats.avg_grade_sem2}` : "..."}</h3>
+                                <p className="text-xs text-slate-400 mt-1">Thang điểm chuẩn hóa 20</p>
+                            </div>
+                        </div>
+
+                        {/* Layout 2 Cột: Biểu đồ & Form Dự đoán */}
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            {/* Cột 1: Biểu đồ Donut */}
+                            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center">
+                                <h4 className="font-semibold text-slate-800 text-sm w-full mb-3">Tỷ Lệ Phân Bổ Trạng Thái Học Tập</h4>
+                                <div className="w-full h-64 relative">
+                                    <canvas ref={chartRef}></canvas>
+                                </div>
+                            </div>
+
+                            {/* Cột 2: Form thử nghiệm dự đoán nhanh */}
+                            <div className="lg:col-span-2 bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                                <h4 className="font-semibold text-slate-800 text-sm mb-4">Công Cụ Đánh Giá Sớm Nguy Cơ Sinh Viên (Mô hình AI)</h4>
+                                <form onSubmit={handlePredict} className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                    <div>
+                                        <label className="text-xs font-medium text-slate-600">Độ tuổi nhập học</label>
+                                        <input
+                                            type="number"
+                                            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                            value={formData.Age_at_enrollment}
+                                            onChange={e => setFormData({ ...formData, Age_at_enrollment: parseInt(e.target.value) || 0 })}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="text-xs font-medium text-slate-600">Nợ môn / Nợ phí</label>
+                                        <select
+                                            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                            value={formData.Debtor}
+                                            onChange={e => setFormData({ ...formData, Debtor: parseInt(e.target.value) })}
+                                        >
+                                            <option value={0}>Không nợ phí</option>
+                                            <option value={1}>Đang nợ phí (Debtor)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label className="text-xs font-medium text-slate-600">Tình trạng học phí</label>
+                                        <select
+                                            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                            value={formData.Tuition_fees_up_to_date}
+                                            onChange={e => setFormData({ ...formData, Tuition_fees_up_to_date: parseInt(e.target.value) })}
+                                        >
+                                            <option value={1}>Đóng đúng hạn</option>
+                                            <option value={0}>Chưa đóng học phí</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label className="text-xs font-medium text-slate-600">Học bổng</label>
+                                        <select
+                                            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                            value={formData.Scholarship_holder}
+                                            onChange={e => setFormData({ ...formData, Scholarship_holder: parseInt(e.target.value) })}
+                                        >
+                                            <option value={0}>Không có học bổng</option>
+                                            <option value={1}>Được nhận học bổng</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label className="text-xs font-medium text-slate-600">Điểm Học kỳ 1 (thang 20)</label>
+                                        <input
+                                            type="number" step="0.1"
+                                            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                            value={formData.Curricular_units_1st_sem_grade}
+                                            onChange={e => setFormData({ ...formData, Curricular_units_1st_sem_grade: parseFloat(e.target.value) || 0 })}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="text-xs font-medium text-slate-600">Điểm Học kỳ 2 (thang 20)</label>
+                                        <input
+                                            type="number" step="0.1"
+                                            className="mt-1 w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                            value={formData.Curricular_units_2nd_sem_grade}
+                                            onChange={e => setFormData({ ...formData, Curricular_units_2nd_sem_grade: parseFloat(e.target.value) || 0 })}
+                                        />
+                                    </div>
+
+                                    <div className="sm:col-span-3 flex items-center justify-between pt-2">
+                                        <button
+                                            type="submit"
+                                            disabled={predicting}
+                                            className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg text-sm transition-colors shadow-sm disabled:opacity-50"
+                                        >
+                                            {predicting ? "Đang xử lý..." : "Chạy Dự Đoán"}
+                                        </button>
+
+                                        {predictResult && (
+                                            <div className={`px-4 py-2 rounded-lg text-sm font-semibold flex items-center gap-2 ${predictResult.is_at_risk ? 'bg-red-100 text-red-700 border border-red-200' : 'bg-green-100 text-green-700 border border-green-200'}`}>
+                                                <span>Kết quả: {predictResult.prediction}</span>
+                                                <span>— {predictResult.risk_warning}</span>
+                                            </div>
+                                        )}
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        {/* Bảng Danh sách Sinh viên & Cảnh báo Sớm */}
+                        <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                            <div className="p-4 border-b border-slate-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                                <div>
+                                    <h4 className="font-semibold text-slate-800 text-base">Danh Sách Theo Dõi & Cảnh Báo Nguy Cơ</h4>
+                                    <p className="text-xs text-slate-500">Giảng viên và cố vấn học tập sử dụng để can thiệp kịp thời</p>
+                                </div>
+                                <div className="flex items-center gap-3 w-full sm:w-auto">
+                                    <input
+                                        type="text"
+                                        placeholder="Tìm mã SV..."
+                                        className="border border-slate-300 rounded-lg px-3 py-1.5 text-sm w-full sm:w-44 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                        value={searchQuery}
+                                        onChange={e => setSearchQuery(e.target.value)}
+                                    />
+                                    <button
+                                        onClick={() => setRiskOnly(!riskOnly)}
+                                        className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-colors border ${riskOnly ? 'bg-rose-600 text-white border-rose-600' : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-50'}`}
+                                    >
+                                        {riskOnly ? "✓ Đang lọc nguy cơ" : "Lọc SV nguy cơ thôi học"}
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div className="overflow-x-auto">
+                                <table className="w-full text-left border-collapse text-sm">
+                                    <thead>
+                                        <tr className="bg-slate-50 border-b border-slate-200 text-slate-600 text-xs font-semibold uppercase">
+                                            <th className="py-3 px-4">Mã Sinh Viên</th>
+                                            <th className="py-3 px-4">Tuổi</th>
+                                            <th className="py-3 px-4">Học Phí</th>
+                                            <th className="py-3 px-4">Điểm Kỳ 1</th>
+                                            <th className="py-3 px-4">Điểm Kỳ 2</th>
+                                            <th className="py-3 px-4">Dự Đoán AI</th>
+                                            <th className="py-3 px-4">Trạng Thái Cảnh Báo</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-slate-100">
+                                        {loading ? (
+                                            <tr><td colSpan="7" className="py-6 text-center text-slate-500">Đang tải dữ liệu...</td></tr>
+                                        ) : students.length === 0 ? (
+                                            <tr><td colSpan="7" className="py-6 text-center text-slate-500">Không tìm thấy sinh viên phù hợp</td></tr>
+                                        ) : (
+                                            students.map(s => {
+                                                const isRisk = s.Predicted_Target === 'Dropout';
+                                                return (
+                                                    <tr key={s.StudentID} className="hover:bg-slate-50 transition-colors">
+                                                        <td className="py-3 px-4 font-mono font-medium text-slate-900">{s.StudentID}</td>
+                                                        <td className="py-3 px-4 text-slate-600">{s.Age_at_enrollment}</td>
+                                                        <td className="py-3 px-4">
+                                                            {s['Tuition fees up to date'] === 1 ? (
+                                                                <span className="text-xs text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Đã đóng</span>
+                                                            ) : (
+                                                                <span className="text-xs text-rose-600 bg-rose-50 px-2 py-0.5 rounded">Nợ học phí</span>
+                                                            )}
+                                                        </td>
+                                                        <td className="py-3 px-4 text-slate-700 font-medium">{s['Curricular units 1st sem (grade)']}</td>
+                                                        <td className="py-3 px-4 text-slate-700 font-medium">{s['Curricular units 2nd sem (grade)']}</td>
+                                                        <td className="py-3 px-4">
+                                                            <span className={`inline-flex px-2 py-0.5 rounded-full text-xs font-semibold ${isRisk ? 'bg-red-100 text-red-800' : 'bg-emerald-100 text-emerald-800'}`}>
+                                                                {s.Predicted_Target}
+                                                            </span>
+                                                        </td>
+                                                        <td className="py-3 px-4">
+                                                            {isRisk ? (
+                                                                <span className="inline-flex items-center text-xs font-medium text-rose-700 bg-rose-50 border border-rose-200 px-2.5 py-1 rounded-md">
+                                                                    ⚠️ Cần can thiệp học tập
+                                                                </span>
+                                                            ) : (
+                                                                <span className="text-xs text-slate-400">Tiến độ tốt</span>
+                                                            )}
+                                                        </td>
+                                                    </tr>
+                                                );
+                                            })
+                                        )}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+</body>
+
+</html>
