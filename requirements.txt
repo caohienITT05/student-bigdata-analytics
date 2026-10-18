@@ -1,0 +1,7 @@
+# FastAPI/dashboard runtime; matches the scikit-learn version saved in the model.
+pandas==3.0.6
+scikit-learn==1.9.1
+joblib==1.6.0
+fastapi==0.142.4
+pydantic==2.13.5
+uvicorn==0.54.0

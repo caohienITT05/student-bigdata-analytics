@@ -1,23 +1,49 @@
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 import pandas as pd
 import joblib
 import os
+import hashlib
+from pathlib import Path
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
+from fastapi.responses import HTMLResponse
+from fastapi.responses import JSONResponse
+from fastapi.exceptions import RequestValidationError
+from multisource.api import router as multisource_router
 
 app = FastAPI(
     title="Student Academic Performance & Dropout Prediction API",
     description="Hệ thống API phục vụ tích hợp dữ liệu và dự đoán kết quả học tập",
     version="1.0.0"
 )
+app.include_router(multisource_router)
+
+
+@app.exception_handler(RequestValidationError)
+async def invalid_request(request, error):
+    # Invalid NaN/Infinity inputs must return 422, without serializing those numbers.
+    details = [{key: item[key] for key in ("loc", "msg", "type")} for item in error.errors()]
+    return JSONResponse(status_code=422, content={"detail": details})
+
 # Phục vụ thư mục static và route dashboard
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/dashboard")
 def serve_dashboard():
-    return FileResponse("static/index.html")
+    # A new script URL prevents cached frontend code from calling a newer API.
+    version = hashlib.sha256(Path("static/multisource.jsx").read_bytes()).hexdigest()[:12]
+    html = Path("static/index.html").read_text(encoding="utf-8")
+    html = html.replace('src="/static/multisource.jsx"', f'src="/static/multisource.jsx?v={version}"')
+    return HTMLResponse(html, headers={"Cache-Control": "no-store"})
+
+
+@app.middleware("http")
+async def refresh_dashboard_assets(request, call_next):
+    response = await call_next(request)
+    if request.url.path in ("/dashboard", "/static/index.html", "/static/multisource.jsx"):
+        response.headers["Cache-Control"] = "no-store"
+    return response
 
 # Cấu hình CORS để Frontend (React) có thể gọi API mà không bị chặn
 app.add_middleware(
@@ -46,13 +72,16 @@ label_encoder = joblib.load(ENCODER_FILE) if os.path.exists(ENCODER_FILE) else N
 class StudentInput(BaseModel):
     Marital_status: int = 1
     Nationality: int = 1
-    Gender: int = 1
-    Age_at_enrollment: int = 20
-    Debtor: int = 0
-    Tuition_fees_up_to_date: int = 1
-    Scholarship_holder: int = 0
-    Curricular_units_1st_sem_grade: float = 12.5
-    Curricular_units_2nd_sem_grade: float = 13.0
+    Gender: int = Field(default=1, strict=True, ge=0, le=1)
+    Age_at_enrollment: int = Field(default=20, strict=True, ge=17, le=70,
+        description="Tuổi nhập học nguyên, 17–70: phạm vi quan sát trong dữ liệu dùng cho model hiện tại.")
+    Debtor: int = Field(default=0, strict=True, ge=0, le=1,
+        description="Cờ công nợ trong nguồn: 0 = không, 1 = có; không phải nợ môn, không suy ra từ cờ học phí.")
+    Tuition_fees_up_to_date: int = Field(default=1, strict=True, ge=0, le=1,
+        description="Cờ học phí đã cập nhật trong nguồn: 0 = chưa, 1 = đã; độc lập với cờ công nợ.")
+    Scholarship_holder: int = Field(default=0, strict=True, ge=0, le=1)
+    Curricular_units_1st_sem_grade: float = Field(default=12.5, strict=True, ge=0, le=20, allow_inf_nan=False)
+    Curricular_units_2nd_sem_grade: float = Field(default=13.0, strict=True, ge=0, le=20, allow_inf_nan=False)
 
 
 # --- CÁC ENDPOINT API ---

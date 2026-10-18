@@ -5,6 +5,7 @@ __pycache__/
 
 # Môi trường ảo (nếu có)
 venv/
+.venv/
 env/
 .env
 
@@ -14,3 +15,20 @@ env/
 
 # File tạm
 *.log
+
+# New batch analytics: raw downloads and reproducible generated outputs
+/data/raw/
+/data/clean/
+/data/curated/*
+!/data/curated/dashboard.sqlite
+/reports/data_pipeline/*
+!/reports/data_pipeline/dashboard_metadata.json
+!/reports/data_pipeline/sources_manifest.json
+!/reports/data_pipeline/quality_academic.json
+!/reports/data_pipeline/quality_oulad.json
+!/reports/data_pipeline/run_a.json
+!/reports/data_pipeline/run_oulad.json
+!/reports/data_pipeline/run_sql.json
+!/reports/data_pipeline/run_verify.json
+/.spark-runtime/
+/.venv-spark/

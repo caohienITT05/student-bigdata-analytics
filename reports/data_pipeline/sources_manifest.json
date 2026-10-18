@@ -1,0 +1,374 @@
+{
+  "prepared_at": "2026-10-11T04:50:57.405181+00:00",
+  "files": [
+    {
+      "source": "original",
+      "file": "data/raw/original/dataset.csv",
+      "bytes": 470858,
+      "sha256": "ff327a7ed348140d42dd682df49e36331e2ca91ca41b8fb9ad911a4f5fba0f4e",
+      "csv": {
+        "encoding": "utf-8-sig",
+        "delimiter": ",",
+        "rows": 4424,
+        "column_count": 35,
+        "columns": [
+          "Marital status",
+          "Application mode",
+          "Application order",
+          "Course",
+          "Daytime/evening attendance",
+          "Previous qualification",
+          "Nacionality",
+          "Mother's qualification",
+          "Father's qualification",
+          "Mother's occupation",
+          "Father's occupation",
+          "Displaced",
+          "Educational special needs",
+          "Debtor",
+          "Tuition fees up to date",
+          "Gender",
+          "Scholarship holder",
+          "Age at enrollment",
+          "International",
+          "Curricular units 1st sem (credited)",
+          "Curricular units 1st sem (enrolled)",
+          "Curricular units 1st sem (evaluations)",
+          "Curricular units 1st sem (approved)",
+          "Curricular units 1st sem (grade)",
+          "Curricular units 1st sem (without evaluations)",
+          "Curricular units 2nd sem (credited)",
+          "Curricular units 2nd sem (enrolled)",
+          "Curricular units 2nd sem (evaluations)",
+          "Curricular units 2nd sem (approved)",
+          "Curricular units 2nd sem (grade)",
+          "Curricular units 2nd sem (without evaluations)",
+          "Unemployment rate",
+          "Inflation rate",
+          "GDP",
+          "Target"
+        ],
+        "malformed_width_rows": 0
+      }
+    },
+    {
+      "source": "kaggle_train",
+      "file": "data/raw/kaggle_s4e6/train.csv",
+      "bytes": 9486541,
+      "sha256": "7d4520733ba333c11d3719188d7c0f645214670b78511bd3e2c3d54bb343b947",
+      "csv": {
+        "encoding": "utf-8-sig",
+        "delimiter": ",",
+        "rows": 76518,
+        "column_count": 38,
+        "columns": [
+          "id",
+          "Marital status",
+          "Application mode",
+          "Application order",
+          "Course",
+          "Daytime/evening attendance",
+          "Previous qualification",
+          "Previous qualification (grade)",
+          "Nacionality",
+          "Mother's qualification",
+          "Father's qualification",
+          "Mother's occupation",
+          "Father's occupation",
+          "Admission grade",
+          "Displaced",
+          "Educational special needs",
+          "Debtor",
+          "Tuition fees up to date",
+          "Gender",
+          "Scholarship holder",
+          "Age at enrollment",
+          "International",
+          "Curricular units 1st sem (credited)",
+          "Curricular units 1st sem (enrolled)",
+          "Curricular units 1st sem (evaluations)",
+          "Curricular units 1st sem (approved)",
+          "Curricular units 1st sem (grade)",
+          "Curricular units 1st sem (without evaluations)",
+          "Curricular units 2nd sem (credited)",
+          "Curricular units 2nd sem (enrolled)",
+          "Curricular units 2nd sem (evaluations)",
+          "Curricular units 2nd sem (approved)",
+          "Curricular units 2nd sem (grade)",
+          "Curricular units 2nd sem (without evaluations)",
+          "Unemployment rate",
+          "Inflation rate",
+          "GDP",
+          "Target"
+        ],
+        "malformed_width_rows": 0
+      }
+    },
+    {
+      "source": "kaggle_test",
+      "file": "data/raw/kaggle_s4e6/test.csv",
+      "bytes": 5925485,
+      "sha256": "6d2fe548d1467a6b500da360d082548633e45c71ce323b87e157001d916eff96",
+      "csv": {
+        "encoding": "utf-8-sig",
+        "delimiter": ",",
+        "rows": 51012,
+        "column_count": 37,
+        "columns": [
+          "id",
+          "Marital status",
+          "Application mode",
+          "Application order",
+          "Course",
+          "Daytime/evening attendance",
+          "Previous qualification",
+          "Previous qualification (grade)",
+          "Nacionality",
+          "Mother's qualification",
+          "Father's qualification",
+          "Mother's occupation",
+          "Father's occupation",
+          "Admission grade",
+          "Displaced",
+          "Educational special needs",
+          "Debtor",
+          "Tuition fees up to date",
+          "Gender",
+          "Scholarship holder",
+          "Age at enrollment",
+          "International",
+          "Curricular units 1st sem (credited)",
+          "Curricular units 1st sem (enrolled)",
+          "Curricular units 1st sem (evaluations)",
+          "Curricular units 1st sem (approved)",
+          "Curricular units 1st sem (grade)",
+          "Curricular units 1st sem (without evaluations)",
+          "Curricular units 2nd sem (credited)",
+          "Curricular units 2nd sem (enrolled)",
+          "Curricular units 2nd sem (evaluations)",
+          "Curricular units 2nd sem (approved)",
+          "Curricular units 2nd sem (grade)",
+          "Curricular units 2nd sem (without evaluations)",
+          "Unemployment rate",
+          "Inflation rate",
+          "GDP"
+        ],
+        "malformed_width_rows": 0
+      }
+    },
+    {
+      "source": "oulad",
+      "file": "data/raw/oulad/assessments.csv",
+      "bytes": 8211,
+      "sha256": "9ce92381e4a0ac457f8e251b2eb2c179ed51e023ab30d1d671a0268bd62316ba",
+      "csv": {
+        "encoding": "utf-8-sig",
+        "delimiter": ",",
+        "rows": 206,
+        "column_count": 6,
+        "columns": [
+          "code_module",
+          "code_presentation",
+          "id_assessment",
+          "assessment_type",
+          "date",
+          "weight"
+        ],
+        "malformed_width_rows": 0
+      }
+    },
+    {
+      "source": "oulad",
+      "file": "data/raw/oulad/courses.csv",
+      "bytes": 526,
+      "sha256": "4f16eee7454b15e109b0a21a0e43be820e6846ed6f9301bb7feb5ab5ad737a75",
+      "csv": {
+        "encoding": "utf-8-sig",
+        "delimiter": ",",
+        "rows": 22,
+        "column_count": 3,
+        "columns": [
+          "code_module",
+          "code_presentation",
+          "module_presentation_length"
+        ],
+        "malformed_width_rows": 0
+      }
+    },
+    {
+      "source": "oulad",
+      "file": "data/raw/oulad/studentAssessment.csv",
+      "bytes": 5690483,
+      "sha256": "b1839e17618a5de36b6d189a242d3123f7939a56c8c9ccef0c17b9199c614a6b",
+      "csv": {
+        "encoding": "utf-8-sig",
+        "delimiter": ",",
+        "rows": 173912,
+        "column_count": 5,
+        "columns": [
+          "id_assessment",
+          "id_student",
+          "date_submitted",
+          "is_banked",
+          "score"
+        ],
+        "malformed_width_rows": 0
+      }
+    },
+    {
+      "source": "oulad",
+      "file": "data/raw/oulad/studentInfo.csv",
+      "bytes": 3462763,
+      "sha256": "815fbc3e2de29f79900bc63f0345a35db62c9146afaa1d86e7107b8b3beffc60",
+      "csv": {
+        "encoding": "utf-8-sig",
+        "delimiter": ",",
+        "rows": 32593,
+        "column_count": 12,
+        "columns": [
+          "code_module",
+          "code_presentation",
+          "id_student",
+          "gender",
+          "region",
+          "highest_education",
+          "imd_band",
+          "age_band",
+          "num_of_prev_attempts",
+          "studied_credits",
+          "disability",
+          "final_result"
+        ],
+        "malformed_width_rows": 0
+      }
+    },
+    {
+      "source": "oulad",
+      "file": "data/raw/oulad/studentRegistration.csv",
+      "bytes": 1132550,
+      "sha256": "bbc87a0de1fe2a9ec6decce1ca6c1a02cf17b54ad3bdcc673fc6413b41c61d47",
+      "csv": {
+        "encoding": "utf-8-sig",
+        "delimiter": ",",
+        "rows": 32593,
+        "column_count": 5,
+        "columns": [
+          "code_module",
+          "code_presentation",
+          "id_student",
+          "date_registration",
+          "date_unregistration"
+        ],
+        "malformed_width_rows": 0
+      }
+    },
+    {
+      "source": "oulad",
+      "file": "data/raw/oulad/studentVle.csv",
+      "bytes": 453836331,
+      "sha256": "52668253d876c5becbcb72185977152700cecab2942aca807fecc3dd54b937f0",
+      "csv": {
+        "encoding": "utf-8-sig",
+        "delimiter": ",",
+        "rows": 10655280,
+        "column_count": 6,
+        "columns": [
+          "code_module",
+          "code_presentation",
+          "id_student",
+          "id_site",
+          "date",
+          "sum_click"
+        ],
+        "malformed_width_rows": 0
+      }
+    },
+    {
+      "source": "oulad",
+      "file": "data/raw/oulad/vle.csv",
+      "bytes": 270612,
+      "sha256": "d7a146497edd0e47ef536144b58796c07b554002d3753e848b8e4cd8a56f4c38",
+      "csv": {
+        "encoding": "utf-8-sig",
+        "delimiter": ",",
+        "rows": 6364,
+        "column_count": 6,
+        "columns": [
+          "id_site",
+          "code_module",
+          "code_presentation",
+          "activity_type",
+          "week_from",
+          "week_to"
+        ],
+        "malformed_width_rows": 0
+      }
+    },
+    {
+      "source": "oulad",
+      "file": "data/raw/oulad/OULAD.names",
+      "bytes": 12278,
+      "sha256": "e497bc5232f385ece30a7e964b0339bd9b74ba9b9083508b66628fed9dc23ebe",
+      "csv": null
+    }
+  ],
+  "legacy": {
+    "dataset.csv": {
+      "bytes": 470858,
+      "sha256": "ff327a7ed348140d42dd682df49e36331e2ca91ca41b8fb9ad911a4f5fba0f4e"
+    },
+    "mysql_demographics.csv": {
+      "bytes": 84193,
+      "sha256": "6e8eaadbbd81b767d15e2bb19c52cf2eea080361c2ee660330c4b6933b0be077"
+    },
+    "mongodb_behaviors.json": {
+      "bytes": 380464,
+      "sha256": "761a7807d551dacaf61629dfaad87204478f2b2a3cc22652ae5b8a8e336554e1"
+    },
+    "flat_grades.csv": {
+      "bytes": 168959,
+      "sha256": "d7f1ef075c2dbb17a55c5acad9b4099d4c4f27dac88fd5956fb2d52eaa057b86"
+    },
+    "final_dataset.csv": {
+      "bytes": 235495,
+      "sha256": "ada691965d356873e9cc7d2fe00346bd365126b66f846e6603f1b6d3a4ca57b8"
+    },
+    "student_predictions.csv": {
+      "bytes": 366717,
+      "sha256": "44b7e5872f3740dc3c7430a3fdfc7c4b5cce49d57fc991b74a943298b5761468"
+    },
+    "best_student_model.pkl": {
+      "bytes": 2361825,
+      "sha256": "012edfcea5e06bae4db32224bdb2ecbbac8346f6c24bbd96a7ef1979713f645f"
+    },
+    "label_encoder.pkl": {
+      "bytes": 505,
+      "sha256": "b557fe63b4b362c4b658f43e33b7fd73f4d4fef016e313c6e90114d8b15e4ffe"
+    },
+    "split_data.py": {
+      "bytes": 1482,
+      "sha256": "a5419bbc91eadc29d6db263be35fe7997982980ad5ca4ba57e709f94d14bb6dc"
+    },
+    "import_data.py": {
+      "bytes": 1488,
+      "sha256": "730ec7ff5cab54f85d9c520ef6d4bc9ac1859750083d492a154d400bcc236104"
+    },
+    "etl_pipeline.py": {
+      "bytes": 3230,
+      "sha256": "d90c8a517473e869b1dff2e51e7be9bbdd17314e7af6608c37ae15e70edbfdce"
+    },
+    "train_models.py": {
+      "bytes": 4264,
+      "sha256": "f290388893998d414e49a9ff4688f67c3d1b2f14acdb139421852f4bcb56530f"
+    },
+    "eda_analysis.py": {
+      "bytes": 3147,
+      "sha256": "16f792d0af70f9e3a2feef2fca2bf51ac4cce19378572f5674e77edffdcd1388"
+    },
+    "docker-compose.yml": {
+      "bytes": 513,
+      "sha256": "970a04cb38daeccf184687a2889fd6e761200c2f2a0c8a3fe5dfcff43566c149"
+    }
+  },
+  "policy": "Copies/checksums verified. Original root dataset and legacy artifacts preserved. No imports or training executed."
+}

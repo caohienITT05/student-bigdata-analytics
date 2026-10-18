@@ -1,0 +1,7 @@
+# Optional: database import, ETL, EDA and training scripts.
+-r requirements.txt
+mysql-connector-python==26.7.0
+pymongo==4.18.2
+matplotlib==3.11.2
+seaborn==0.13.2
+xgboost==3.2.0

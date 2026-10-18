@@ -1,0 +1,1032 @@
+{
+  "groups": {
+    "person": "Cá nhân",
+    "admission": "Tuyển sinh",
+    "family": "Gia đình",
+    "finance": "Tài chính",
+    "study": "Học tập",
+    "economy": "Kinh tế",
+    "result": "Kết quả",
+    "identity": "Định danh",
+    "activity": "Tương tác",
+    "assessment": "Bài đánh giá",
+    "registration": "Đăng ký"
+  },
+  "sources": [
+    {
+      "key": "original",
+      "label": "Dataset gốc",
+      "detail": "Hồ sơ sinh viên · dữ liệu quan sát"
+    },
+    {
+      "key": "kaggle",
+      "label": "Kaggle",
+      "detail": "Train & test · dữ liệu sinh"
+    },
+    {
+      "key": "oulad",
+      "label": "OULAD",
+      "detail": "Hồ sơ & tương tác học tập"
+    }
+  ],
+  "files": [
+    {
+      "key": "original",
+      "source": "original",
+      "path": "data/raw/original/dataset.csv",
+      "note": "Có tuổi, quốc tịch và nghề nghiệp bố/mẹ. File gốc không có ID; StudentID trong phần tra cứu do dự án tạo.",
+      "fields": [
+        {
+          "key": "Age at enrollment",
+          "label": "Tuổi khi nhập học",
+          "type": "Số nguyên · tuổi",
+          "group": "person"
+        },
+        {
+          "key": "Gender",
+          "label": "Giới tính",
+          "type": "Mã 0 / 1",
+          "group": "person"
+        },
+        {
+          "key": "Nacionality",
+          "label": "Quốc tịch",
+          "type": "Mã danh mục",
+          "group": "person"
+        },
+        {
+          "key": "Marital status",
+          "label": "Tình trạng hôn nhân",
+          "type": "Mã danh mục",
+          "group": "person"
+        },
+        {
+          "key": "International",
+          "label": "Sinh viên quốc tế",
+          "type": "Mã 0 / 1",
+          "group": "person"
+        },
+        {
+          "key": "Displaced",
+          "label": "Tình trạng chuyển nơi ở",
+          "type": "Mã 0 / 1",
+          "group": "person"
+        },
+        {
+          "key": "Educational special needs",
+          "label": "Nhu cầu giáo dục đặc biệt",
+          "type": "Mã 0 / 1",
+          "group": "person"
+        },
+        {
+          "key": "Mother's occupation",
+          "label": "Nghề nghiệp của mẹ",
+          "type": "Mã danh mục",
+          "group": "family"
+        },
+        {
+          "key": "Father's occupation",
+          "label": "Nghề nghiệp của bố",
+          "type": "Mã danh mục",
+          "group": "family"
+        },
+        {
+          "key": "Mother's qualification",
+          "label": "Trình độ học vấn của mẹ",
+          "type": "Mã danh mục",
+          "group": "family"
+        },
+        {
+          "key": "Father's qualification",
+          "label": "Trình độ học vấn của bố",
+          "type": "Mã danh mục",
+          "group": "family"
+        },
+        {
+          "key": "Course",
+          "label": "Ngành / khóa học",
+          "type": "Mã danh mục",
+          "group": "admission"
+        },
+        {
+          "key": "Application mode",
+          "label": "Phương thức tuyển sinh",
+          "type": "Mã danh mục",
+          "group": "admission"
+        },
+        {
+          "key": "Application order",
+          "label": "Thứ tự nguyện vọng",
+          "type": "Số nguyên",
+          "group": "admission"
+        },
+        {
+          "key": "Daytime/evening attendance",
+          "label": "Học ban ngày / buổi tối",
+          "type": "Mã 0 / 1",
+          "group": "admission"
+        },
+        {
+          "key": "Previous qualification",
+          "label": "Trình độ trước khi nhập học",
+          "type": "Mã danh mục",
+          "group": "admission"
+        },
+        {
+          "key": "Debtor",
+          "label": "Tình trạng công nợ",
+          "type": "Mã 0 / 1",
+          "group": "finance"
+        },
+        {
+          "key": "Tuition fees up to date",
+          "label": "Tình trạng thanh toán học phí",
+          "type": "Mã 0 / 1",
+          "group": "finance"
+        },
+        {
+          "key": "Scholarship holder",
+          "label": "Có học bổng",
+          "type": "Mã 0 / 1",
+          "group": "finance"
+        },
+        {
+          "key": "Curricular units 1st sem (credited)",
+          "label": "Học phần được công nhận · HK1",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 1st sem (enrolled)",
+          "label": "Học phần đăng ký · HK1",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 1st sem (evaluations)",
+          "label": "Lượt đánh giá · HK1",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 1st sem (approved)",
+          "label": "Học phần đạt · HK1",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 1st sem (grade)",
+          "label": "Điểm trung bình · HK1",
+          "type": "Số thực · thang 20",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 1st sem (without evaluations)",
+          "label": "Học phần chưa đánh giá · HK1",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 2nd sem (credited)",
+          "label": "Học phần được công nhận · HK2",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 2nd sem (enrolled)",
+          "label": "Học phần đăng ký · HK2",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 2nd sem (evaluations)",
+          "label": "Lượt đánh giá · HK2",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 2nd sem (approved)",
+          "label": "Học phần đạt · HK2",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 2nd sem (grade)",
+          "label": "Điểm trung bình · HK2",
+          "type": "Số thực · thang 20",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 2nd sem (without evaluations)",
+          "label": "Học phần chưa đánh giá · HK2",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Unemployment rate",
+          "label": "Tỷ lệ thất nghiệp",
+          "type": "Số thực · %",
+          "group": "economy"
+        },
+        {
+          "key": "Inflation rate",
+          "label": "Tỷ lệ lạm phát",
+          "type": "Số thực · %",
+          "group": "economy"
+        },
+        {
+          "key": "GDP",
+          "label": "Chỉ số GDP trong nguồn",
+          "type": "Số thực",
+          "group": "economy"
+        },
+        {
+          "key": "Target",
+          "label": "Trạng thái học tập",
+          "type": "Dropout / Enrolled / Graduate",
+          "group": "result"
+        }
+      ]
+    },
+    {
+      "key": "train",
+      "source": "kaggle",
+      "path": "data/raw/kaggle_s4e6/train.csv",
+      "note": "Dữ liệu sinh, có id và nhãn Target. Quốc tịch, nghề nghiệp và ngành học giữ mã theo nguồn Kaggle.",
+      "fields": [
+        {
+          "key": "id",
+          "label": "Mã bản ghi Kaggle",
+          "type": "Số nguyên · không phải StudentID",
+          "group": "identity"
+        },
+        {
+          "key": "Age at enrollment",
+          "label": "Tuổi khi nhập học",
+          "type": "Số nguyên · tuổi",
+          "group": "person"
+        },
+        {
+          "key": "Gender",
+          "label": "Giới tính",
+          "type": "Mã 0 / 1",
+          "group": "person"
+        },
+        {
+          "key": "Nacionality",
+          "label": "Quốc tịch",
+          "type": "Mã danh mục",
+          "group": "person"
+        },
+        {
+          "key": "Marital status",
+          "label": "Tình trạng hôn nhân",
+          "type": "Mã danh mục",
+          "group": "person"
+        },
+        {
+          "key": "International",
+          "label": "Sinh viên quốc tế",
+          "type": "Mã 0 / 1",
+          "group": "person"
+        },
+        {
+          "key": "Displaced",
+          "label": "Tình trạng chuyển nơi ở",
+          "type": "Mã 0 / 1",
+          "group": "person"
+        },
+        {
+          "key": "Educational special needs",
+          "label": "Nhu cầu giáo dục đặc biệt",
+          "type": "Mã 0 / 1",
+          "group": "person"
+        },
+        {
+          "key": "Mother's occupation",
+          "label": "Nghề nghiệp của mẹ",
+          "type": "Mã danh mục",
+          "group": "family"
+        },
+        {
+          "key": "Father's occupation",
+          "label": "Nghề nghiệp của bố",
+          "type": "Mã danh mục",
+          "group": "family"
+        },
+        {
+          "key": "Mother's qualification",
+          "label": "Trình độ học vấn của mẹ",
+          "type": "Mã danh mục",
+          "group": "family"
+        },
+        {
+          "key": "Father's qualification",
+          "label": "Trình độ học vấn của bố",
+          "type": "Mã danh mục",
+          "group": "family"
+        },
+        {
+          "key": "Course",
+          "label": "Ngành / khóa học",
+          "type": "Mã danh mục",
+          "group": "admission"
+        },
+        {
+          "key": "Application mode",
+          "label": "Phương thức tuyển sinh",
+          "type": "Mã danh mục",
+          "group": "admission"
+        },
+        {
+          "key": "Application order",
+          "label": "Thứ tự nguyện vọng",
+          "type": "Số nguyên",
+          "group": "admission"
+        },
+        {
+          "key": "Daytime/evening attendance",
+          "label": "Học ban ngày / buổi tối",
+          "type": "Mã 0 / 1",
+          "group": "admission"
+        },
+        {
+          "key": "Previous qualification",
+          "label": "Trình độ trước khi nhập học",
+          "type": "Mã danh mục",
+          "group": "admission"
+        },
+        {
+          "key": "Debtor",
+          "label": "Tình trạng công nợ",
+          "type": "Mã 0 / 1",
+          "group": "finance"
+        },
+        {
+          "key": "Tuition fees up to date",
+          "label": "Tình trạng thanh toán học phí",
+          "type": "Mã 0 / 1",
+          "group": "finance"
+        },
+        {
+          "key": "Scholarship holder",
+          "label": "Có học bổng",
+          "type": "Mã 0 / 1",
+          "group": "finance"
+        },
+        {
+          "key": "Curricular units 1st sem (credited)",
+          "label": "Học phần được công nhận · HK1",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 1st sem (enrolled)",
+          "label": "Học phần đăng ký · HK1",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 1st sem (evaluations)",
+          "label": "Lượt đánh giá · HK1",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 1st sem (approved)",
+          "label": "Học phần đạt · HK1",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 1st sem (grade)",
+          "label": "Điểm trung bình · HK1",
+          "type": "Số thực · thang 20",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 1st sem (without evaluations)",
+          "label": "Học phần chưa đánh giá · HK1",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 2nd sem (credited)",
+          "label": "Học phần được công nhận · HK2",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 2nd sem (enrolled)",
+          "label": "Học phần đăng ký · HK2",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 2nd sem (evaluations)",
+          "label": "Lượt đánh giá · HK2",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 2nd sem (approved)",
+          "label": "Học phần đạt · HK2",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 2nd sem (grade)",
+          "label": "Điểm trung bình · HK2",
+          "type": "Số thực · thang 20",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 2nd sem (without evaluations)",
+          "label": "Học phần chưa đánh giá · HK2",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Unemployment rate",
+          "label": "Tỷ lệ thất nghiệp",
+          "type": "Số thực · %",
+          "group": "economy"
+        },
+        {
+          "key": "Inflation rate",
+          "label": "Tỷ lệ lạm phát",
+          "type": "Số thực · %",
+          "group": "economy"
+        },
+        {
+          "key": "GDP",
+          "label": "Chỉ số GDP trong nguồn",
+          "type": "Số thực",
+          "group": "economy"
+        },
+        {
+          "key": "Target",
+          "label": "Trạng thái học tập",
+          "type": "Dropout / Enrolled / Graduate",
+          "group": "result"
+        },
+        {
+          "key": "Previous qualification (grade)",
+          "label": "Điểm trình độ trước đó",
+          "type": "Số thực",
+          "group": "admission"
+        },
+        {
+          "key": "Admission grade",
+          "label": "Điểm tuyển sinh",
+          "type": "Số thực",
+          "group": "admission"
+        }
+      ]
+    },
+    {
+      "key": "test",
+      "source": "kaggle",
+      "path": "data/raw/kaggle_s4e6/test.csv",
+      "note": "Dữ liệu sinh, có id nhưng không có cột Target. Không dùng dự đoán làm kết quả thật.",
+      "fields": [
+        {
+          "key": "id",
+          "label": "Mã bản ghi Kaggle",
+          "type": "Số nguyên · không phải StudentID",
+          "group": "identity"
+        },
+        {
+          "key": "Age at enrollment",
+          "label": "Tuổi khi nhập học",
+          "type": "Số nguyên · tuổi",
+          "group": "person"
+        },
+        {
+          "key": "Gender",
+          "label": "Giới tính",
+          "type": "Mã 0 / 1",
+          "group": "person"
+        },
+        {
+          "key": "Nacionality",
+          "label": "Quốc tịch",
+          "type": "Mã danh mục",
+          "group": "person"
+        },
+        {
+          "key": "Marital status",
+          "label": "Tình trạng hôn nhân",
+          "type": "Mã danh mục",
+          "group": "person"
+        },
+        {
+          "key": "International",
+          "label": "Sinh viên quốc tế",
+          "type": "Mã 0 / 1",
+          "group": "person"
+        },
+        {
+          "key": "Displaced",
+          "label": "Tình trạng chuyển nơi ở",
+          "type": "Mã 0 / 1",
+          "group": "person"
+        },
+        {
+          "key": "Educational special needs",
+          "label": "Nhu cầu giáo dục đặc biệt",
+          "type": "Mã 0 / 1",
+          "group": "person"
+        },
+        {
+          "key": "Mother's occupation",
+          "label": "Nghề nghiệp của mẹ",
+          "type": "Mã danh mục",
+          "group": "family"
+        },
+        {
+          "key": "Father's occupation",
+          "label": "Nghề nghiệp của bố",
+          "type": "Mã danh mục",
+          "group": "family"
+        },
+        {
+          "key": "Mother's qualification",
+          "label": "Trình độ học vấn của mẹ",
+          "type": "Mã danh mục",
+          "group": "family"
+        },
+        {
+          "key": "Father's qualification",
+          "label": "Trình độ học vấn của bố",
+          "type": "Mã danh mục",
+          "group": "family"
+        },
+        {
+          "key": "Course",
+          "label": "Ngành / khóa học",
+          "type": "Mã danh mục",
+          "group": "admission"
+        },
+        {
+          "key": "Application mode",
+          "label": "Phương thức tuyển sinh",
+          "type": "Mã danh mục",
+          "group": "admission"
+        },
+        {
+          "key": "Application order",
+          "label": "Thứ tự nguyện vọng",
+          "type": "Số nguyên",
+          "group": "admission"
+        },
+        {
+          "key": "Daytime/evening attendance",
+          "label": "Học ban ngày / buổi tối",
+          "type": "Mã 0 / 1",
+          "group": "admission"
+        },
+        {
+          "key": "Previous qualification",
+          "label": "Trình độ trước khi nhập học",
+          "type": "Mã danh mục",
+          "group": "admission"
+        },
+        {
+          "key": "Debtor",
+          "label": "Tình trạng công nợ",
+          "type": "Mã 0 / 1",
+          "group": "finance"
+        },
+        {
+          "key": "Tuition fees up to date",
+          "label": "Tình trạng thanh toán học phí",
+          "type": "Mã 0 / 1",
+          "group": "finance"
+        },
+        {
+          "key": "Scholarship holder",
+          "label": "Có học bổng",
+          "type": "Mã 0 / 1",
+          "group": "finance"
+        },
+        {
+          "key": "Curricular units 1st sem (credited)",
+          "label": "Học phần được công nhận · HK1",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 1st sem (enrolled)",
+          "label": "Học phần đăng ký · HK1",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 1st sem (evaluations)",
+          "label": "Lượt đánh giá · HK1",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 1st sem (approved)",
+          "label": "Học phần đạt · HK1",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 1st sem (grade)",
+          "label": "Điểm trung bình · HK1",
+          "type": "Số thực · thang 20",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 1st sem (without evaluations)",
+          "label": "Học phần chưa đánh giá · HK1",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 2nd sem (credited)",
+          "label": "Học phần được công nhận · HK2",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 2nd sem (enrolled)",
+          "label": "Học phần đăng ký · HK2",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 2nd sem (evaluations)",
+          "label": "Lượt đánh giá · HK2",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 2nd sem (approved)",
+          "label": "Học phần đạt · HK2",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 2nd sem (grade)",
+          "label": "Điểm trung bình · HK2",
+          "type": "Số thực · thang 20",
+          "group": "study"
+        },
+        {
+          "key": "Curricular units 2nd sem (without evaluations)",
+          "label": "Học phần chưa đánh giá · HK2",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "Unemployment rate",
+          "label": "Tỷ lệ thất nghiệp",
+          "type": "Số thực · %",
+          "group": "economy"
+        },
+        {
+          "key": "Inflation rate",
+          "label": "Tỷ lệ lạm phát",
+          "type": "Số thực · %",
+          "group": "economy"
+        },
+        {
+          "key": "GDP",
+          "label": "Chỉ số GDP trong nguồn",
+          "type": "Số thực",
+          "group": "economy"
+        },
+        {
+          "key": "Previous qualification (grade)",
+          "label": "Điểm trình độ trước đó",
+          "type": "Số thực",
+          "group": "admission"
+        },
+        {
+          "key": "Admission grade",
+          "label": "Điểm tuyển sinh",
+          "type": "Số thực",
+          "group": "admission"
+        }
+      ]
+    },
+    {
+      "key": "studentInfo",
+      "source": "oulad",
+      "path": "data/raw/oulad/studentInfo.csv",
+      "note": "Một dòng là một lượt học. Có nhóm tuổi và vùng địa lý; không có quốc tịch hay nghề nghiệp bố/mẹ.",
+      "fields": [
+        {
+          "key": "code_module",
+          "label": "Mã học phần",
+          "type": "Mã danh mục",
+          "group": "identity"
+        },
+        {
+          "key": "code_presentation",
+          "label": "Mã đợt học",
+          "type": "Mã danh mục",
+          "group": "identity"
+        },
+        {
+          "key": "id_student",
+          "label": "Mã người học",
+          "type": "Số nguyên · định danh",
+          "group": "identity"
+        },
+        {
+          "key": "gender",
+          "label": "Giới tính",
+          "type": "Danh mục",
+          "group": "person"
+        },
+        {
+          "key": "region",
+          "label": "Vùng địa lý",
+          "type": "Danh mục",
+          "group": "person"
+        },
+        {
+          "key": "highest_education",
+          "label": "Trình độ học vấn cao nhất",
+          "type": "Danh mục",
+          "group": "person"
+        },
+        {
+          "key": "imd_band",
+          "label": "Nhóm chỉ số điều kiện khu vực",
+          "type": "Nhóm chỉ số",
+          "group": "person"
+        },
+        {
+          "key": "age_band",
+          "label": "Nhóm tuổi",
+          "type": "Khoảng tuổi",
+          "group": "person"
+        },
+        {
+          "key": "disability",
+          "label": "Tình trạng khuyết tật khai báo",
+          "type": "Danh mục",
+          "group": "person"
+        },
+        {
+          "key": "num_of_prev_attempts",
+          "label": "Số lần học lại trước đó",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "studied_credits",
+          "label": "Số tín chỉ đang học",
+          "type": "Số nguyên",
+          "group": "study"
+        },
+        {
+          "key": "final_result",
+          "label": "Kết quả học phần",
+          "type": "Withdrawn / Fail / Pass / Distinction",
+          "group": "result"
+        }
+      ]
+    },
+    {
+      "key": "studentVle",
+      "source": "oulad",
+      "path": "data/raw/oulad/studentVle.csv",
+      "note": "Một dòng tổng hợp tương tác của người học với một tài nguyên trong một ngày. sum_click là số lượt nhấp, không phải số người.",
+      "fields": [
+        {
+          "key": "code_module",
+          "label": "Mã học phần",
+          "type": "Mã danh mục",
+          "group": "identity"
+        },
+        {
+          "key": "code_presentation",
+          "label": "Mã đợt học",
+          "type": "Mã danh mục",
+          "group": "identity"
+        },
+        {
+          "key": "id_student",
+          "label": "Mã người học",
+          "type": "Số nguyên · định danh",
+          "group": "identity"
+        },
+        {
+          "key": "id_site",
+          "label": "Mã tài nguyên học tập",
+          "type": "Số nguyên · định danh",
+          "group": "identity"
+        },
+        {
+          "key": "date",
+          "label": "Ngày tương tác",
+          "type": "Ngày tương đối",
+          "group": "activity"
+        },
+        {
+          "key": "sum_click",
+          "label": "Số lượt nhấp trong ngày",
+          "type": "Số nguyên",
+          "group": "activity"
+        }
+      ]
+    },
+    {
+      "key": "studentRegistration",
+      "source": "oulad",
+      "path": "data/raw/oulad/studentRegistration.csv",
+      "note": "Ngày được tính so với ngày bắt đầu học phần; giá trị âm là trước ngày bắt đầu.",
+      "fields": [
+        {
+          "key": "code_module",
+          "label": "Mã học phần",
+          "type": "Mã danh mục",
+          "group": "identity"
+        },
+        {
+          "key": "code_presentation",
+          "label": "Mã đợt học",
+          "type": "Mã danh mục",
+          "group": "identity"
+        },
+        {
+          "key": "id_student",
+          "label": "Mã người học",
+          "type": "Số nguyên · định danh",
+          "group": "identity"
+        },
+        {
+          "key": "date_registration",
+          "label": "Ngày đăng ký học",
+          "type": "Ngày tương đối",
+          "group": "registration"
+        },
+        {
+          "key": "date_unregistration",
+          "label": "Ngày rút học phần",
+          "type": "Ngày tương đối · có thể thiếu",
+          "group": "registration"
+        }
+      ]
+    },
+    {
+      "key": "courses",
+      "source": "oulad",
+      "path": "data/raw/oulad/courses.csv",
+      "note": "Mỗi dòng là một học phần trong một đợt tổ chức, không phải một sinh viên.",
+      "fields": [
+        {
+          "key": "code_module",
+          "label": "Mã học phần",
+          "type": "Mã danh mục",
+          "group": "identity"
+        },
+        {
+          "key": "code_presentation",
+          "label": "Mã đợt học",
+          "type": "Mã danh mục",
+          "group": "identity"
+        },
+        {
+          "key": "module_presentation_length",
+          "label": "Thời lượng học phần",
+          "type": "Số ngày",
+          "group": "study"
+        }
+      ]
+    },
+    {
+      "key": "vle",
+      "source": "oulad",
+      "path": "data/raw/oulad/vle.csv",
+      "note": "Danh mục tài nguyên trên môi trường học trực tuyến, dùng để liên kết với nhật ký tương tác.",
+      "fields": [
+        {
+          "key": "id_site",
+          "label": "Mã tài nguyên",
+          "type": "Số nguyên · định danh",
+          "group": "identity"
+        },
+        {
+          "key": "code_module",
+          "label": "Mã học phần",
+          "type": "Mã danh mục",
+          "group": "identity"
+        },
+        {
+          "key": "code_presentation",
+          "label": "Mã đợt học",
+          "type": "Mã danh mục",
+          "group": "identity"
+        },
+        {
+          "key": "activity_type",
+          "label": "Loại hoạt động / tài nguyên",
+          "type": "Danh mục",
+          "group": "activity"
+        },
+        {
+          "key": "week_from",
+          "label": "Tuần bắt đầu sử dụng dự kiến",
+          "type": "Số nguyên · có thể thiếu",
+          "group": "activity"
+        },
+        {
+          "key": "week_to",
+          "label": "Tuần kết thúc sử dụng dự kiến",
+          "type": "Số nguyên · có thể thiếu",
+          "group": "activity"
+        }
+      ]
+    },
+    {
+      "key": "assessments",
+      "source": "oulad",
+      "path": "data/raw/oulad/assessments.csv",
+      "note": "Thông tin định nghĩa bài đánh giá: loại bài, hạn nộp và trọng số. File nguồn vẫn có trong dự án.",
+      "fields": [
+        {
+          "key": "code_module",
+          "label": "Mã học phần",
+          "type": "Mã danh mục",
+          "group": "identity"
+        },
+        {
+          "key": "code_presentation",
+          "label": "Mã đợt học",
+          "type": "Mã danh mục",
+          "group": "identity"
+        },
+        {
+          "key": "id_assessment",
+          "label": "Mã bài đánh giá",
+          "type": "Số nguyên · định danh",
+          "group": "identity"
+        },
+        {
+          "key": "assessment_type",
+          "label": "Loại bài đánh giá",
+          "type": "Danh mục",
+          "group": "assessment"
+        },
+        {
+          "key": "date",
+          "label": "Hạn nộp bài",
+          "type": "Ngày tương đối · có thể thiếu",
+          "group": "assessment"
+        },
+        {
+          "key": "weight",
+          "label": "Trọng số bài đánh giá",
+          "type": "Số thực · %",
+          "group": "assessment"
+        }
+      ]
+    },
+    {
+      "key": "studentAssessment",
+      "source": "oulad",
+      "path": "data/raw/oulad/studentAssessment.csv",
+      "note": "Chứa mã người học, mã bài đánh giá, ngày nộp, kết quả được công nhận từ đợt trước và điểm bài trên thang 100.",
+      "fields": [
+        {
+          "key": "id_assessment",
+          "label": "Mã bài đánh giá",
+          "type": "Số nguyên · định danh",
+          "group": "identity"
+        },
+        {
+          "key": "id_student",
+          "label": "Mã người học",
+          "type": "Số nguyên · định danh",
+          "group": "identity"
+        },
+        {
+          "key": "date_submitted",
+          "label": "Ngày nộp bài",
+          "type": "Ngày tương đối",
+          "group": "assessment"
+        },
+        {
+          "key": "is_banked",
+          "label": "Kết quả được công nhận từ đợt trước",
+          "type": "Mã 0 / 1",
+          "group": "assessment"
+        },
+        {
+          "key": "score",
+          "label": "Điểm bài đánh giá",
+          "type": "Số thực · thang 100",
+          "group": "assessment"
+        }
+      ]
+    }
+  ]
+}

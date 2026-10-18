@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "name": "original",
+      "file": "data/raw/original/dataset.csv",
+      "incoming": "dataset.csv",
+      "move": false,
+      "is_synthetic": false
+    },
+    {
+      "name": "kaggle_train",
+      "file": "data/raw/kaggle_s4e6/train.csv",
+      "incoming": "train.csv",
+      "move": true,
+      "is_synthetic": true
+    },
+    {
+      "name": "kaggle_test",
+      "file": "data/raw/kaggle_s4e6/test.csv",
+      "incoming": "test.csv",
+      "move": true,
+      "is_synthetic": true
+    }
+  ],
+  "oulad": {
+    "incoming": "open+university+learning+analytics+dataset",
+    "directory": "data/raw/oulad",
+    "files": [
+      "assessments.csv",
+      "courses.csv",
+      "studentAssessment.csv",
+      "studentInfo.csv",
+      "studentRegistration.csv",
+      "studentVle.csv",
+      "vle.csv",
+      "OULAD.names"
+    ]
+  },
+  "spark": {
+    "image": "apache/spark:4.0.1-python3",
+    "master": "local[2]",
+    "driver_memory": "768m",
+    "shuffle_partitions": 8,
+    "max_partition_bytes": 33554432
+  },
+  "paths": {
+    "clean": "data/clean",
+    "curated": "data/curated",
+    "reports": "reports/data_pipeline"
+  },
+  "code_policy": "Không có bảng ánh xạ được xác minh giữa dataset gốc và Kaggle. Mọi mã danh mục giữ nguyên và được phân tích theo nguồn; không nhóm chung chỉ vì trùng mã."
+}

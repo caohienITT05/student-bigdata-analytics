@@ -1,0 +1,120 @@
+{
+  "stage": "sql",
+  "state": "completed",
+  "scope": "full",
+  "fingerprint": "12af2ed8e34b468c4f31a4ea56df47a990264dcdfc22b886cb0655321d650750",
+  "started_at": "2026-10-18T10:53:34.371441+00:00",
+  "completed_at": "2026-10-18T10:53:43.844148+00:00",
+  "elapsed_seconds": 9.47,
+  "runtime": {
+    "spark_version": "4.0.1",
+    "python_version": "3.10.12 (main, Aug 15 2025, 14:32:43) [GCC 11.4.0]",
+    "platform": "Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "java_version": "17.0.16",
+    "master": "local[2]",
+    "driver_memory": "768m",
+    "shuffle_partitions": "8",
+    "max_partition_bytes": "33554432",
+    "execution": "Single-machine local Spark inside Docker; not a multi-machine cluster"
+  },
+  "tables": {
+    "a_summary": {
+      "rows": 3,
+      "columns": [
+        "source",
+        "source_file",
+        "is_synthetic",
+        "has_target",
+        "records",
+        "labelled_records",
+        "dropout_records",
+        "dropout_percent",
+        "mean_age",
+        "mean_sem1",
+        "mean_sem2",
+        "flagged_records"
+      ],
+      "sql_file": "sql/academic.sql",
+      "units": "counts, percentages, grade/click/day measures as named"
+    },
+    "a_target": {
+      "rows": 7,
+      "columns": [
+        "source",
+        "source_file",
+        "is_synthetic",
+        "has_target",
+        "target",
+        "records"
+      ],
+      "sql_file": "sql/academic.sql",
+      "units": "counts, percentages, grade/click/day measures as named"
+    },
+    "a_histograms": {
+      "rows": 42,
+      "columns": [
+        "source",
+        "source_file",
+        "is_synthetic",
+        "has_target",
+        "metric",
+        "bin",
+        "bin_order",
+        "records"
+      ],
+      "sql_file": "sql/academic.sql",
+      "units": "counts, percentages, grade/click/day measures as named"
+    },
+    "b_population": {
+      "rows": 34,
+      "columns": [
+        "code_module",
+        "code_presentation",
+        "scope",
+        "enrolments",
+        "unique_learners",
+        "no_activity_enrolments",
+        "clicks_undefined_enrolments",
+        "clicks"
+      ],
+      "sql_file": "sql/oulad.sql",
+      "units": "counts, percentages, grade/click/day measures as named"
+    },
+    "b_results": {
+      "rows": 136,
+      "columns": [
+        "code_module",
+        "code_presentation",
+        "scope",
+        "final_result",
+        "enrolments",
+        "clicks",
+        "mean_clicks",
+        "mean_active_days",
+        "pre_start_clicks",
+        "mean_resources",
+        "no_activity_enrolments"
+      ],
+      "sql_file": "sql/oulad.sql",
+      "units": "counts, percentages, grade/click/day measures as named"
+    },
+    "b_weekly": {
+      "rows": 5418,
+      "columns": [
+        "code_module",
+        "code_presentation",
+        "scope",
+        "week",
+        "final_result",
+        "active_enrolments",
+        "clicks",
+        "enrolment_active_days",
+        "mean_resources",
+        "last_activity_day"
+      ],
+      "sql_file": "sql/oulad.sql",
+      "units": "counts, percentages, grade/click/day measures as named"
+    }
+  },
+  "serving_database_bytes": 446464
+}

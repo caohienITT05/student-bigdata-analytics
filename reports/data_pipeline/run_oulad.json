@@ -1,0 +1,51 @@
+{
+  "stage": "oulad",
+  "state": "completed",
+  "scope": "full",
+  "fingerprint": "12af2ed8e34b468c4f31a4ea56df47a990264dcdfc22b886cb0655321d650750",
+  "started_at": "2026-10-18T10:51:08.439098+00:00",
+  "completed_at": "2026-10-18T10:53:34.358577+00:00",
+  "elapsed_seconds": 145.93,
+  "runtime": {
+    "spark_version": "4.0.1",
+    "python_version": "3.10.12 (main, Aug 15 2025, 14:32:43) [GCC 11.4.0]",
+    "platform": "Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "java_version": "17.0.16",
+    "master": "local[2]",
+    "driver_memory": "768m",
+    "shuffle_partitions": "8",
+    "max_partition_bytes": "33554432",
+    "execution": "Single-machine local Spark inside Docker; not a multi-machine cluster"
+  },
+  "input_rows": {
+    "courses": 22,
+    "assessments": 206,
+    "studentInfo": 32593,
+    "studentRegistration": 32593,
+    "studentAssessment": 173912,
+    "studentVle": 10655280,
+    "vle": 6364
+  },
+  "output_rows": 32593,
+  "unique_learners": 28785,
+  "joins": {
+    "enrolment_key": [
+      "id_student",
+      "code_module",
+      "code_presentation"
+    ],
+    "cardinality": "profile 1:1 registration; n:1 course; events n:1 dimension; aggregate before LEFT JOIN",
+    "input_vle_rows": 10655280,
+    "joined_vle_rows": 10655280,
+    "vle_without_enrolment": 0,
+    "vle_without_resource": 0,
+    "assessment_without_definition": 0,
+    "assessment_without_enrolment": 0,
+    "registration_without_profile": 0,
+    "profiles_without_registration": 0,
+    "profiles_without_course": 0,
+    "enrolments": 32593,
+    "unique_learners": 28785,
+    "no_vle_entire_course": 3365
+  }
+}

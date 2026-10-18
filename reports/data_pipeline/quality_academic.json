@@ -1,0 +1,1410 @@
+{
+  "sources": [
+    {
+      "rows": 4424,
+      "columns": 35,
+      "column_details": [
+        {
+          "column": "Marital status",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1,
+          "max": 6
+        },
+        {
+          "column": "Application mode",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1,
+          "max": 18
+        },
+        {
+          "column": "Application order",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 9
+        },
+        {
+          "column": "Course",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1,
+          "max": 17
+        },
+        {
+          "column": "Daytime/evening attendance",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Previous qualification",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1,
+          "max": 17
+        },
+        {
+          "column": "Nacionality",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1,
+          "max": 21
+        },
+        {
+          "column": "Mother's qualification",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1,
+          "max": 29
+        },
+        {
+          "column": "Father's qualification",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1,
+          "max": 34
+        },
+        {
+          "column": "Mother's occupation",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1,
+          "max": 32
+        },
+        {
+          "column": "Father's occupation",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1,
+          "max": 46
+        },
+        {
+          "column": "Displaced",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Educational special needs",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Debtor",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Tuition fees up to date",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Gender",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Scholarship holder",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Age at enrollment",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 17,
+          "max": 70
+        },
+        {
+          "column": "International",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Curricular units 1st sem (credited)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 20
+        },
+        {
+          "column": "Curricular units 1st sem (enrolled)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 26
+        },
+        {
+          "column": "Curricular units 1st sem (evaluations)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 45
+        },
+        {
+          "column": "Curricular units 1st sem (approved)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 26
+        },
+        {
+          "column": "Curricular units 1st sem (grade)",
+          "type": "double",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0.0,
+          "max": 18.875
+        },
+        {
+          "column": "Curricular units 1st sem (without evaluations)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 12
+        },
+        {
+          "column": "Curricular units 2nd sem (credited)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 19
+        },
+        {
+          "column": "Curricular units 2nd sem (enrolled)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 23
+        },
+        {
+          "column": "Curricular units 2nd sem (evaluations)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 33
+        },
+        {
+          "column": "Curricular units 2nd sem (approved)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 20
+        },
+        {
+          "column": "Curricular units 2nd sem (grade)",
+          "type": "double",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0.0,
+          "max": 18.571428571428573
+        },
+        {
+          "column": "Curricular units 2nd sem (without evaluations)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 12
+        },
+        {
+          "column": "Unemployment rate",
+          "type": "double",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 7.6,
+          "max": 16.2
+        },
+        {
+          "column": "Inflation rate",
+          "type": "double",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": -0.8,
+          "max": 3.7
+        },
+        {
+          "column": "GDP",
+          "type": "double",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": -4.06,
+          "max": 3.51
+        },
+        {
+          "column": "Target",
+          "type": "string",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": "Dropout",
+          "max": "Graduate",
+          "observed_values": [
+            "Dropout",
+            "Enrolled",
+            "Graduate"
+          ],
+          "values_truncated": false
+        }
+      ],
+      "flagged_rows": 0,
+      "full_row_duplicate_excess": 0,
+      "key": [],
+      "duplicate_key_rows": 0,
+      "duplicate_key_excess": 0,
+      "duplicate_key_groups": 0,
+      "missing_key_rows": null,
+      "missing_markers": [
+        "empty CSV field",
+        "?"
+      ],
+      "duplicate_policy": "Keep rows; report duplicates. No feature-based deduplication.",
+      "zero_policy": "Numeric zero is kept; no imputation.",
+      "file": "data/raw/original/dataset.csv",
+      "encoding": "utf-8-sig",
+      "delimiter": ",",
+      "is_synthetic": false,
+      "category_policy": "Không có bảng ánh xạ được xác minh giữa dataset gốc và Kaggle. Mọi mã danh mục giữ nguyên và được phân tích theo nguồn; không nhóm chung chỉ vì trùng mã."
+    },
+    {
+      "rows": 76518,
+      "columns": 38,
+      "column_details": [
+        {
+          "column": "id",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 76517
+        },
+        {
+          "column": "Marital status",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1,
+          "max": 6
+        },
+        {
+          "column": "Application mode",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1,
+          "max": 53
+        },
+        {
+          "column": "Application order",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 9
+        },
+        {
+          "column": "Course",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 33,
+          "max": 9991
+        },
+        {
+          "column": "Daytime/evening attendance",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Previous qualification",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1,
+          "max": 43
+        },
+        {
+          "column": "Previous qualification (grade)",
+          "type": "double",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 95.0,
+          "max": 190.0
+        },
+        {
+          "column": "Nacionality",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1,
+          "max": 109
+        },
+        {
+          "column": "Mother's qualification",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1,
+          "max": 44
+        },
+        {
+          "column": "Father's qualification",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1,
+          "max": 44
+        },
+        {
+          "column": "Mother's occupation",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 194
+        },
+        {
+          "column": "Father's occupation",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 195
+        },
+        {
+          "column": "Admission grade",
+          "type": "double",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 95.0,
+          "max": 190.0
+        },
+        {
+          "column": "Displaced",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Educational special needs",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Debtor",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Tuition fees up to date",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Gender",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Scholarship holder",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Age at enrollment",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 17,
+          "max": 70
+        },
+        {
+          "column": "International",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Curricular units 1st sem (credited)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 20
+        },
+        {
+          "column": "Curricular units 1st sem (enrolled)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 26
+        },
+        {
+          "column": "Curricular units 1st sem (evaluations)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 45
+        },
+        {
+          "column": "Curricular units 1st sem (approved)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 26
+        },
+        {
+          "column": "Curricular units 1st sem (grade)",
+          "type": "double",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0.0,
+          "max": 18.875
+        },
+        {
+          "column": "Curricular units 1st sem (without evaluations)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 12
+        },
+        {
+          "column": "Curricular units 2nd sem (credited)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 19
+        },
+        {
+          "column": "Curricular units 2nd sem (enrolled)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 23
+        },
+        {
+          "column": "Curricular units 2nd sem (evaluations)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 33
+        },
+        {
+          "column": "Curricular units 2nd sem (approved)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 20
+        },
+        {
+          "column": "Curricular units 2nd sem (grade)",
+          "type": "double",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0.0,
+          "max": 18.0
+        },
+        {
+          "column": "Curricular units 2nd sem (without evaluations)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 12
+        },
+        {
+          "column": "Unemployment rate",
+          "type": "double",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 7.6,
+          "max": 16.2
+        },
+        {
+          "column": "Inflation rate",
+          "type": "double",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": -0.8,
+          "max": 3.7
+        },
+        {
+          "column": "GDP",
+          "type": "double",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": -4.06,
+          "max": 3.51
+        },
+        {
+          "column": "Target",
+          "type": "string",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": "Dropout",
+          "max": "Graduate",
+          "observed_values": [
+            "Dropout",
+            "Enrolled",
+            "Graduate"
+          ],
+          "values_truncated": false
+        }
+      ],
+      "flagged_rows": 0,
+      "full_row_duplicate_excess": 0,
+      "key": [
+        "id"
+      ],
+      "duplicate_key_rows": 0,
+      "duplicate_key_excess": 0,
+      "duplicate_key_groups": 0,
+      "missing_key_rows": 0,
+      "missing_markers": [
+        "empty CSV field",
+        "?"
+      ],
+      "duplicate_policy": "Keep rows; report duplicates. No feature-based deduplication.",
+      "zero_policy": "Numeric zero is kept; no imputation.",
+      "file": "data/raw/kaggle_s4e6/train.csv",
+      "encoding": "utf-8-sig",
+      "delimiter": ",",
+      "is_synthetic": true,
+      "category_policy": "Không có bảng ánh xạ được xác minh giữa dataset gốc và Kaggle. Mọi mã danh mục giữ nguyên và được phân tích theo nguồn; không nhóm chung chỉ vì trùng mã."
+    },
+    {
+      "rows": 51012,
+      "columns": 37,
+      "column_details": [
+        {
+          "column": "id",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 76518,
+          "max": 127529
+        },
+        {
+          "column": "Marital status",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1,
+          "max": 6
+        },
+        {
+          "column": "Application mode",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1,
+          "max": 53
+        },
+        {
+          "column": "Application order",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 9
+        },
+        {
+          "column": "Course",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 33,
+          "max": 9991
+        },
+        {
+          "column": "Daytime/evening attendance",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Previous qualification",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1,
+          "max": 43
+        },
+        {
+          "column": "Previous qualification (grade)",
+          "type": "double",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 95.0,
+          "max": 190.0
+        },
+        {
+          "column": "Nacionality",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1,
+          "max": 109
+        },
+        {
+          "column": "Mother's qualification",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1,
+          "max": 44
+        },
+        {
+          "column": "Father's qualification",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1,
+          "max": 43
+        },
+        {
+          "column": "Mother's occupation",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 194
+        },
+        {
+          "column": "Father's occupation",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 195
+        },
+        {
+          "column": "Admission grade",
+          "type": "double",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 95.0,
+          "max": 190.0
+        },
+        {
+          "column": "Displaced",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Educational special needs",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Debtor",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Tuition fees up to date",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Gender",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Scholarship holder",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Age at enrollment",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 17,
+          "max": 70
+        },
+        {
+          "column": "International",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "Curricular units 1st sem (credited)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 20
+        },
+        {
+          "column": "Curricular units 1st sem (enrolled)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 23
+        },
+        {
+          "column": "Curricular units 1st sem (evaluations)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 45
+        },
+        {
+          "column": "Curricular units 1st sem (approved)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 23
+        },
+        {
+          "column": "Curricular units 1st sem (grade)",
+          "type": "double",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0.0,
+          "max": 18.875
+        },
+        {
+          "column": "Curricular units 1st sem (without evaluations)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 12
+        },
+        {
+          "column": "Curricular units 2nd sem (credited)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 19
+        },
+        {
+          "column": "Curricular units 2nd sem (enrolled)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 23
+        },
+        {
+          "column": "Curricular units 2nd sem (evaluations)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 33
+        },
+        {
+          "column": "Curricular units 2nd sem (approved)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 20
+        },
+        {
+          "column": "Curricular units 2nd sem (grade)",
+          "type": "double",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0.0,
+          "max": 17.714285714285715
+        },
+        {
+          "column": "Curricular units 2nd sem (without evaluations)",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 10
+        },
+        {
+          "column": "Unemployment rate",
+          "type": "double",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 7.6,
+          "max": 16.2
+        },
+        {
+          "column": "Inflation rate",
+          "type": "double",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": -0.8,
+          "max": 3.7
+        },
+        {
+          "column": "GDP",
+          "type": "double",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": -4.06,
+          "max": 3.51
+        }
+      ],
+      "flagged_rows": 0,
+      "full_row_duplicate_excess": 0,
+      "key": [
+        "id"
+      ],
+      "duplicate_key_rows": 0,
+      "duplicate_key_excess": 0,
+      "duplicate_key_groups": 0,
+      "missing_key_rows": 0,
+      "missing_markers": [
+        "empty CSV field",
+        "?"
+      ],
+      "duplicate_policy": "Keep rows; report duplicates. No feature-based deduplication.",
+      "zero_policy": "Numeric zero is kept; no imputation.",
+      "file": "data/raw/kaggle_s4e6/test.csv",
+      "encoding": "utf-8-sig",
+      "delimiter": ",",
+      "is_synthetic": true,
+      "category_policy": "Không có bảng ánh xạ được xác minh giữa dataset gốc và Kaggle. Mọi mã danh mục giữ nguyên và được phân tích theo nguồn; không nhóm chung chỉ vì trùng mã."
+    }
+  ],
+  "union_rows": 131954,
+  "retained_all_input_rows": true,
+  "schema": {
+    "type": "struct",
+    "fields": [
+      {
+        "name": "marital_status",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "application_mode",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "application_order",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "course",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "daytime_evening_attendance",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "previous_qualification",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "nationality",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "mother_s_qualification",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "father_s_qualification",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "mother_s_occupation",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "father_s_occupation",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "displaced",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "educational_special_needs",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "debtor",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "tuition_fees_up_to_date",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "gender",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "scholarship_holder",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "age_at_enrollment",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "international",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "sem1_credited",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "sem1_enrolled",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "sem1_evaluations",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "sem1_approved",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "sem1_grade",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "sem1_without_evaluations",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "sem2_credited",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "sem2_enrolled",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "sem2_evaluations",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "sem2_approved",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "sem2_grade",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "sem2_without_evaluations",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "unemployment_rate",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "inflation_rate",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "gdp",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "Target",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "_issues",
+        "type": {
+          "type": "array",
+          "elementType": "string",
+          "containsNull": true
+        },
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "_raw_record",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "_malformed",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "_source_row",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "source_record_id",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "record_id",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "source",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "source_file",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "is_synthetic",
+        "type": "boolean",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "has_target",
+        "type": "boolean",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "code_namespace",
+        "type": "string",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "id",
+        "type": "long",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "previous_qualification_grade",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      },
+      {
+        "name": "admission_grade",
+        "type": "double",
+        "nullable": true,
+        "metadata": {}
+      }
+    ]
+  },
+  "policy": "Không có bảng ánh xạ được xác minh giữa dataset gốc và Kaggle. Mọi mã danh mục giữ nguyên và được phân tích theo nguồn; không nhóm chung chỉ vì trùng mã.",
+  "id_policy": "Namespace source:file:id for supplied IDs; original source uses stable technical CSV row number, not a real student ID.",
+  "schema_differences": {
+    "original": [
+      "Marital status",
+      "Application mode",
+      "Application order",
+      "Course",
+      "Daytime/evening attendance",
+      "Previous qualification",
+      "Nacionality",
+      "Mother's qualification",
+      "Father's qualification",
+      "Mother's occupation",
+      "Father's occupation",
+      "Displaced",
+      "Educational special needs",
+      "Debtor",
+      "Tuition fees up to date",
+      "Gender",
+      "Scholarship holder",
+      "Age at enrollment",
+      "International",
+      "Curricular units 1st sem (credited)",
+      "Curricular units 1st sem (enrolled)",
+      "Curricular units 1st sem (evaluations)",
+      "Curricular units 1st sem (approved)",
+      "Curricular units 1st sem (grade)",
+      "Curricular units 1st sem (without evaluations)",
+      "Curricular units 2nd sem (credited)",
+      "Curricular units 2nd sem (enrolled)",
+      "Curricular units 2nd sem (evaluations)",
+      "Curricular units 2nd sem (approved)",
+      "Curricular units 2nd sem (grade)",
+      "Curricular units 2nd sem (without evaluations)",
+      "Unemployment rate",
+      "Inflation rate",
+      "GDP",
+      "Target"
+    ],
+    "kaggle_train": [
+      "id",
+      "Marital status",
+      "Application mode",
+      "Application order",
+      "Course",
+      "Daytime/evening attendance",
+      "Previous qualification",
+      "Previous qualification (grade)",
+      "Nacionality",
+      "Mother's qualification",
+      "Father's qualification",
+      "Mother's occupation",
+      "Father's occupation",
+      "Admission grade",
+      "Displaced",
+      "Educational special needs",
+      "Debtor",
+      "Tuition fees up to date",
+      "Gender",
+      "Scholarship holder",
+      "Age at enrollment",
+      "International",
+      "Curricular units 1st sem (credited)",
+      "Curricular units 1st sem (enrolled)",
+      "Curricular units 1st sem (evaluations)",
+      "Curricular units 1st sem (approved)",
+      "Curricular units 1st sem (grade)",
+      "Curricular units 1st sem (without evaluations)",
+      "Curricular units 2nd sem (credited)",
+      "Curricular units 2nd sem (enrolled)",
+      "Curricular units 2nd sem (evaluations)",
+      "Curricular units 2nd sem (approved)",
+      "Curricular units 2nd sem (grade)",
+      "Curricular units 2nd sem (without evaluations)",
+      "Unemployment rate",
+      "Inflation rate",
+      "GDP",
+      "Target"
+    ],
+    "kaggle_test": [
+      "id",
+      "Marital status",
+      "Application mode",
+      "Application order",
+      "Course",
+      "Daytime/evening attendance",
+      "Previous qualification",
+      "Previous qualification (grade)",
+      "Nacionality",
+      "Mother's qualification",
+      "Father's qualification",
+      "Mother's occupation",
+      "Father's occupation",
+      "Admission grade",
+      "Displaced",
+      "Educational special needs",
+      "Debtor",
+      "Tuition fees up to date",
+      "Gender",
+      "Scholarship holder",
+      "Age at enrollment",
+      "International",
+      "Curricular units 1st sem (credited)",
+      "Curricular units 1st sem (enrolled)",
+      "Curricular units 1st sem (evaluations)",
+      "Curricular units 1st sem (approved)",
+      "Curricular units 1st sem (grade)",
+      "Curricular units 1st sem (without evaluations)",
+      "Curricular units 2nd sem (credited)",
+      "Curricular units 2nd sem (enrolled)",
+      "Curricular units 2nd sem (evaluations)",
+      "Curricular units 2nd sem (approved)",
+      "Curricular units 2nd sem (grade)",
+      "Curricular units 2nd sem (without evaluations)",
+      "Unemployment rate",
+      "Inflation rate",
+      "GDP"
+    ]
+  },
+  "label_policy": "Original observed, Kaggle synthetic; test Target remains null; never use sample_submission or legacy predictions.",
+  "units": {
+    "age_at_enrollment": "Years",
+    "sem1_grade/sem2_grade": "0–20; zero is observed, not missing",
+    "sem*_enrolled/approved": "Curricular unit counts",
+    "categories": "Literal source-scoped codes; no verified cross-source codebook"
+  },
+  "rules": [
+    "No imputation",
+    "No row deduplication",
+    "Missing source-only columns remain null",
+    "Codes are source scoped"
+  ]
+}

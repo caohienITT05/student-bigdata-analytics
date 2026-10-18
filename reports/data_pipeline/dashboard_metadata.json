@@ -1,0 +1,107 @@
+{
+  "processed_at": "2026-10-18T10:53:43.839584+00:00",
+  "mode": "Spark local batch; API reads exported summaries, no job per request",
+  "database": "data/curated/dashboard.sqlite",
+  "tables": {
+    "a_summary": {
+      "rows": 3,
+      "columns": [
+        "source",
+        "source_file",
+        "is_synthetic",
+        "has_target",
+        "records",
+        "labelled_records",
+        "dropout_records",
+        "dropout_percent",
+        "mean_age",
+        "mean_sem1",
+        "mean_sem2",
+        "flagged_records"
+      ],
+      "sql_file": "sql/academic.sql",
+      "units": "counts, percentages, grade/click/day measures as named"
+    },
+    "a_target": {
+      "rows": 7,
+      "columns": [
+        "source",
+        "source_file",
+        "is_synthetic",
+        "has_target",
+        "target",
+        "records"
+      ],
+      "sql_file": "sql/academic.sql",
+      "units": "counts, percentages, grade/click/day measures as named"
+    },
+    "a_histograms": {
+      "rows": 42,
+      "columns": [
+        "source",
+        "source_file",
+        "is_synthetic",
+        "has_target",
+        "metric",
+        "bin",
+        "bin_order",
+        "records"
+      ],
+      "sql_file": "sql/academic.sql",
+      "units": "counts, percentages, grade/click/day measures as named"
+    },
+    "b_population": {
+      "rows": 34,
+      "columns": [
+        "code_module",
+        "code_presentation",
+        "scope",
+        "enrolments",
+        "unique_learners",
+        "no_activity_enrolments",
+        "clicks_undefined_enrolments",
+        "clicks"
+      ],
+      "sql_file": "sql/oulad.sql",
+      "units": "counts, percentages, grade/click/day measures as named"
+    },
+    "b_results": {
+      "rows": 136,
+      "columns": [
+        "code_module",
+        "code_presentation",
+        "scope",
+        "final_result",
+        "enrolments",
+        "clicks",
+        "mean_clicks",
+        "mean_active_days",
+        "pre_start_clicks",
+        "mean_resources",
+        "no_activity_enrolments"
+      ],
+      "sql_file": "sql/oulad.sql",
+      "units": "counts, percentages, grade/click/day measures as named"
+    },
+    "b_weekly": {
+      "rows": 5418,
+      "columns": [
+        "code_module",
+        "code_presentation",
+        "scope",
+        "week",
+        "final_result",
+        "active_enrolments",
+        "clicks",
+        "enrolment_active_days",
+        "mean_resources",
+        "last_activity_day"
+      ],
+      "sql_file": "sql/oulad.sql",
+      "units": "counts, percentages, grade/click/day measures as named"
+    }
+  },
+  "code_policy": "Không có bảng ánh xạ được xác minh giữa dataset gốc và Kaggle. Mọi mã danh mục giữ nguyên và được phân tích theo nguồn; không nhóm chung chỉ vì trùng mã.",
+  "oulad_label_note": "Withdrawn = rút học phần; Fail = không đạt; Pass = đạt; Distinction = đạt mức xuất sắc. Không đồng nhất với thôi học đại học.",
+  "non_causal_note": "Các khác biệt là quan sát trong từng nguồn, không chứng minh quan hệ nhân quả."
+}

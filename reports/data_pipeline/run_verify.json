@@ -1,0 +1,26 @@
+{
+  "stage": "verify",
+  "state": "completed",
+  "scope": "full",
+  "fingerprint": "6e9d26cd240bb27d2a94c80b8d280ffa938a6764b4c47525cbc7f271cf997db0",
+  "started_at": "2026-10-18T10:54:10.717857+00:00",
+  "completed_at": "2026-10-18T10:54:20.780914+00:00",
+  "elapsed_seconds": 10.06,
+  "runtime": {
+    "spark_version": "4.0.1",
+    "python_version": "3.10.12 (main, Aug 15 2025, 14:32:43) [GCC 11.4.0]",
+    "platform": "Linux-6.18.33.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "java_version": "17.0.16",
+    "master": "local[2]",
+    "driver_memory": "768m",
+    "shuffle_partitions": "8",
+    "max_partition_bytes": "33554432",
+    "execution": "Single-machine local Spark inside Docker; not a multi-machine cluster"
+  },
+  "academic_rows": 131954,
+  "oulad_enrolments": 32593,
+  "unique_learners": 28785,
+  "no_activity_kept": 3365,
+  "source_scoped_codes": true,
+  "full_course_only": true
+}

@@ -1,0 +1,673 @@
+{
+  "tables": {
+    "courses": {
+      "rows": 22,
+      "columns": 3,
+      "column_details": [
+        {
+          "column": "code_module",
+          "type": "string",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": "AAA",
+          "max": "GGG"
+        },
+        {
+          "column": "code_presentation",
+          "type": "string",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": "2013B",
+          "max": "2014J"
+        },
+        {
+          "column": "module_presentation_length",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 234,
+          "max": 269
+        }
+      ],
+      "flagged_rows": 0,
+      "full_row_duplicate_excess": 0,
+      "key": [
+        "code_module",
+        "code_presentation"
+      ],
+      "duplicate_key_rows": 0,
+      "duplicate_key_excess": 0,
+      "duplicate_key_groups": 0,
+      "missing_key_rows": 0,
+      "missing_markers": [
+        "empty CSV field",
+        "?"
+      ],
+      "duplicate_policy": "Keep rows; report duplicates. No feature-based deduplication.",
+      "zero_policy": "Numeric zero is kept; no imputation.",
+      "file": "data/raw/oulad/courses.csv",
+      "encoding": "utf-8-sig",
+      "delimiter": ","
+    },
+    "assessments": {
+      "rows": 206,
+      "columns": 6,
+      "column_details": [
+        {
+          "column": "code_module",
+          "type": "string",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": "AAA",
+          "max": "GGG",
+          "observed_values": [
+            "AAA",
+            "BBB",
+            "CCC",
+            "DDD",
+            "EEE",
+            "FFF",
+            "GGG"
+          ],
+          "values_truncated": false
+        },
+        {
+          "column": "code_presentation",
+          "type": "string",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": "2013B",
+          "max": "2014J",
+          "observed_values": [
+            "2013B",
+            "2013J",
+            "2014B",
+            "2014J"
+          ],
+          "values_truncated": false
+        },
+        {
+          "column": "id_assessment",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1752,
+          "max": 40088
+        },
+        {
+          "column": "assessment_type",
+          "type": "string",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": "CMA",
+          "max": "TMA",
+          "observed_values": [
+            "CMA",
+            "Exam",
+            "TMA"
+          ],
+          "values_truncated": false
+        },
+        {
+          "column": "date",
+          "type": "bigint",
+          "missing_raw": 11,
+          "missing_clean": 11,
+          "min": 12,
+          "max": 261
+        },
+        {
+          "column": "weight",
+          "type": "double",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0.0,
+          "max": 100.0
+        }
+      ],
+      "flagged_rows": 0,
+      "full_row_duplicate_excess": 0,
+      "key": [
+        "id_assessment"
+      ],
+      "duplicate_key_rows": 0,
+      "duplicate_key_excess": 0,
+      "duplicate_key_groups": 0,
+      "missing_key_rows": 0,
+      "missing_markers": [
+        "empty CSV field",
+        "?"
+      ],
+      "duplicate_policy": "Keep rows; report duplicates. No feature-based deduplication.",
+      "zero_policy": "Numeric zero is kept; no imputation.",
+      "file": "data/raw/oulad/assessments.csv",
+      "encoding": "utf-8-sig",
+      "delimiter": ","
+    },
+    "studentInfo": {
+      "rows": 32593,
+      "columns": 12,
+      "column_details": [
+        {
+          "column": "code_module",
+          "type": "string",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": "AAA",
+          "max": "GGG"
+        },
+        {
+          "column": "code_presentation",
+          "type": "string",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": "2013B",
+          "max": "2014J"
+        },
+        {
+          "column": "id_student",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 3733,
+          "max": 2716795
+        },
+        {
+          "column": "gender",
+          "type": "string",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": "F",
+          "max": "M",
+          "observed_values": [
+            "F",
+            "M"
+          ],
+          "values_truncated": false
+        },
+        {
+          "column": "region",
+          "type": "string",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": "East Anglian Region",
+          "max": "Yorkshire Region",
+          "observed_values": [
+            "East Anglian Region",
+            "East Midlands Region",
+            "Ireland",
+            "London Region",
+            "North Region",
+            "North Western Region",
+            "Scotland",
+            "South East Region",
+            "South Region",
+            "South West Region",
+            "Wales",
+            "West Midlands Region",
+            "Yorkshire Region"
+          ],
+          "values_truncated": false
+        },
+        {
+          "column": "highest_education",
+          "type": "string",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": "A Level or Equivalent",
+          "max": "Post Graduate Qualification",
+          "observed_values": [
+            "A Level or Equivalent",
+            "HE Qualification",
+            "Lower Than A Level",
+            "No Formal quals",
+            "Post Graduate Qualification"
+          ],
+          "values_truncated": false
+        },
+        {
+          "column": "imd_band",
+          "type": "string",
+          "missing_raw": 1111,
+          "missing_clean": 1111,
+          "min": "0-10%",
+          "max": "90-100%",
+          "observed_values": [
+            null,
+            "0-10%",
+            "10-20",
+            "20-30%",
+            "30-40%",
+            "40-50%",
+            "50-60%",
+            "60-70%",
+            "70-80%",
+            "80-90%",
+            "90-100%"
+          ],
+          "values_truncated": false
+        },
+        {
+          "column": "age_band",
+          "type": "string",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": "0-35",
+          "max": "55<=",
+          "observed_values": [
+            "0-35",
+            "35-55",
+            "55<="
+          ],
+          "values_truncated": false
+        },
+        {
+          "column": "num_of_prev_attempts",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 6
+        },
+        {
+          "column": "studied_credits",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 30,
+          "max": 655
+        },
+        {
+          "column": "disability",
+          "type": "string",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": "N",
+          "max": "Y",
+          "observed_values": [
+            "N",
+            "Y"
+          ],
+          "values_truncated": false
+        },
+        {
+          "column": "final_result",
+          "type": "string",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": "Distinction",
+          "max": "Withdrawn",
+          "observed_values": [
+            "Distinction",
+            "Fail",
+            "Pass",
+            "Withdrawn"
+          ],
+          "values_truncated": false
+        }
+      ],
+      "flagged_rows": 0,
+      "full_row_duplicate_excess": 0,
+      "key": [
+        "id_student",
+        "code_module",
+        "code_presentation"
+      ],
+      "duplicate_key_rows": 0,
+      "duplicate_key_excess": 0,
+      "duplicate_key_groups": 0,
+      "missing_key_rows": 0,
+      "missing_markers": [
+        "empty CSV field",
+        "?"
+      ],
+      "duplicate_policy": "Keep rows; report duplicates. No feature-based deduplication.",
+      "zero_policy": "Numeric zero is kept; no imputation.",
+      "file": "data/raw/oulad/studentInfo.csv",
+      "encoding": "utf-8-sig",
+      "delimiter": ","
+    },
+    "studentRegistration": {
+      "rows": 32593,
+      "columns": 5,
+      "column_details": [
+        {
+          "column": "code_module",
+          "type": "string",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": "AAA",
+          "max": "GGG"
+        },
+        {
+          "column": "code_presentation",
+          "type": "string",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": "2013B",
+          "max": "2014J"
+        },
+        {
+          "column": "id_student",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 3733,
+          "max": 2716795
+        },
+        {
+          "column": "date_registration",
+          "type": "bigint",
+          "missing_raw": 45,
+          "missing_clean": 45,
+          "min": -322,
+          "max": 167
+        },
+        {
+          "column": "date_unregistration",
+          "type": "bigint",
+          "missing_raw": 22521,
+          "missing_clean": 22521,
+          "min": -365,
+          "max": 444
+        }
+      ],
+      "flagged_rows": 0,
+      "full_row_duplicate_excess": 0,
+      "key": [
+        "id_student",
+        "code_module",
+        "code_presentation"
+      ],
+      "duplicate_key_rows": 0,
+      "duplicate_key_excess": 0,
+      "duplicate_key_groups": 0,
+      "missing_key_rows": 0,
+      "missing_markers": [
+        "empty CSV field",
+        "?"
+      ],
+      "duplicate_policy": "Keep rows; report duplicates. No feature-based deduplication.",
+      "zero_policy": "Numeric zero is kept; no imputation.",
+      "file": "data/raw/oulad/studentRegistration.csv",
+      "encoding": "utf-8-sig",
+      "delimiter": ","
+    },
+    "studentAssessment": {
+      "rows": 173912,
+      "columns": 5,
+      "column_details": [
+        {
+          "column": "id_assessment",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1752,
+          "max": 37443
+        },
+        {
+          "column": "id_student",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 6516,
+          "max": 2698588
+        },
+        {
+          "column": "date_submitted",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": -11,
+          "max": 608
+        },
+        {
+          "column": "is_banked",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "column": "score",
+          "type": "double",
+          "missing_raw": 173,
+          "missing_clean": 173,
+          "min": 0.0,
+          "max": 100.0
+        }
+      ],
+      "flagged_rows": 0,
+      "full_row_duplicate_excess": 0,
+      "key": [
+        "id_assessment",
+        "id_student"
+      ],
+      "duplicate_key_rows": 0,
+      "duplicate_key_excess": 0,
+      "duplicate_key_groups": 0,
+      "missing_key_rows": 0,
+      "missing_markers": [
+        "empty CSV field",
+        "?"
+      ],
+      "duplicate_policy": "Keep rows; report duplicates. No feature-based deduplication.",
+      "zero_policy": "Numeric zero is kept; no imputation.",
+      "file": "data/raw/oulad/studentAssessment.csv",
+      "encoding": "utf-8-sig",
+      "delimiter": ","
+    },
+    "studentVle": {
+      "rows": 10655280,
+      "columns": 6,
+      "column_details": [
+        {
+          "column": "code_module",
+          "type": "string",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": "AAA",
+          "max": "GGG"
+        },
+        {
+          "column": "code_presentation",
+          "type": "string",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": "2013B",
+          "max": "2014J"
+        },
+        {
+          "column": "id_student",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 6516,
+          "max": 2698588
+        },
+        {
+          "column": "id_site",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 526721,
+          "max": 1049562
+        },
+        {
+          "column": "date",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": -25,
+          "max": 269
+        },
+        {
+          "column": "sum_click",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 1,
+          "max": 6977
+        }
+      ],
+      "flagged_rows": 0,
+      "full_row_duplicate_excess": 787170,
+      "key": [
+        "id_student",
+        "code_module",
+        "code_presentation",
+        "id_site",
+        "date"
+      ],
+      "duplicate_key_rows": 3810465,
+      "duplicate_key_excess": 2195960,
+      "duplicate_key_groups": 1614505,
+      "missing_key_rows": 0,
+      "missing_markers": [
+        "empty CSV field",
+        "?"
+      ],
+      "duplicate_policy": "Keep rows; report duplicates. No feature-based deduplication.",
+      "zero_policy": "Numeric zero is kept; no imputation.",
+      "file": "data/raw/oulad/studentVle.csv",
+      "encoding": "utf-8-sig",
+      "delimiter": ","
+    },
+    "vle": {
+      "rows": 6364,
+      "columns": 6,
+      "column_details": [
+        {
+          "column": "id_site",
+          "type": "bigint",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": 526721,
+          "max": 1077905
+        },
+        {
+          "column": "code_module",
+          "type": "string",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": "AAA",
+          "max": "GGG"
+        },
+        {
+          "column": "code_presentation",
+          "type": "string",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": "2013B",
+          "max": "2014J"
+        },
+        {
+          "column": "activity_type",
+          "type": "string",
+          "missing_raw": 0,
+          "missing_clean": 0,
+          "min": "dataplus",
+          "max": "url",
+          "observed_values": [
+            "dataplus",
+            "dualpane",
+            "externalquiz",
+            "folder",
+            "forumng",
+            "glossary",
+            "homepage",
+            "htmlactivity",
+            "oucollaborate",
+            "oucontent",
+            "ouelluminate",
+            "ouwiki",
+            "page",
+            "questionnaire",
+            "quiz",
+            "repeatactivity",
+            "resource",
+            "sharedsubpage",
+            "subpage",
+            "url"
+          ],
+          "values_truncated": false
+        },
+        {
+          "column": "week_from",
+          "type": "bigint",
+          "missing_raw": 5243,
+          "missing_clean": 5243,
+          "min": 0,
+          "max": 29
+        },
+        {
+          "column": "week_to",
+          "type": "bigint",
+          "missing_raw": 5243,
+          "missing_clean": 5243,
+          "min": 0,
+          "max": 29
+        }
+      ],
+      "flagged_rows": 0,
+      "full_row_duplicate_excess": 0,
+      "key": [
+        "id_site",
+        "code_module",
+        "code_presentation"
+      ],
+      "duplicate_key_rows": 0,
+      "duplicate_key_excess": 0,
+      "duplicate_key_groups": 0,
+      "missing_key_rows": 0,
+      "missing_markers": [
+        "empty CSV field",
+        "?"
+      ],
+      "duplicate_policy": "Keep rows; report duplicates. No feature-based deduplication.",
+      "zero_policy": "Numeric zero is kept; no imputation.",
+      "file": "data/raw/oulad/vle.csv",
+      "encoding": "utf-8-sig",
+      "delimiter": ","
+    }
+  },
+  "joins": {
+    "enrolment_key": [
+      "id_student",
+      "code_module",
+      "code_presentation"
+    ],
+    "cardinality": "profile 1:1 registration; n:1 course; events n:1 dimension; aggregate before LEFT JOIN",
+    "input_vle_rows": 10655280,
+    "joined_vle_rows": 10655280,
+    "vle_without_enrolment": 0,
+    "vle_without_resource": 0,
+    "assessment_without_definition": 0,
+    "assessment_without_enrolment": 0,
+    "registration_without_profile": 0,
+    "profiles_without_registration": 0,
+    "profiles_without_course": 0,
+    "enrolments": 32593,
+    "unique_learners": 28785,
+    "no_vle_entire_course": 3365
+  },
+  "documentation": "data/raw/oulad/OULAD.names (Windows-1252 text); CSV header takes precedence where field names differ.",
+  "units": {
+    "dates": "Days relative to module/presentation start; negative days are pre-start",
+    "week": "floor(date / 7)",
+    "score": "0–100, observed zero retained, missing score null",
+    "weight": "Assessment weight in percent",
+    "sum_click": "Logged clicks; sum preserved without event deduplication",
+    "identity": "One student × module × presentation per enrolment"
+  },
+  "rules": [
+    "Preserve missing dates/scores; missing submission is not score zero",
+    "Negative dates are pre-course; retained, with separate pre_start_clicks",
+    "Do not treat Withdrawn as university dropout; final_result labels kept literally",
+    "Assessment links checked separately; never joined to individual interactions",
+    "Orphan links retained in quarantine",
+    "Zero activity only after fully processing source; invalid activity is flagged",
+    "Final_result is a later outcome used for retrospective description, not an AI prediction"
+  ]
+}
